@@ -4,15 +4,16 @@ import {
     Route
 } from "react-router-dom"
 import './index.css';
-import Header from './components/Header';
 
-import './App.css';
-import Home from "./components/Home";
+import Header from "./components/Header/Header";
+
+import "./App.css";
+import Home from "./pages/Home";
 import React from "react";
-import Contatti from "./components/Contatti";
-import Articoli from "./components/Articoli";
-import ChiSiamo from "./components/Chi-siamo";
-import Materiali from "./components/Materiali";
+import Contatti from "./pages/Contatti";
+import Articoli from "./pages/Articoli";
+import ChiSiamo from "./pages/Chi-siamo";
+import Materiali from "./pages/Materiali";
 
 let links=[
     {label:'Home',link:'',id:1},
