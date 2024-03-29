@@ -1,0 +1,14 @@
+
+
+.carousel-body{
+    background-image: var(--image-url);
+    transition: 1s;
+}
+
+button{
+    padding: 10px;
+    border: #000000 solid 1px;
+    border-radius: 25px;
+    display: block;
+    background: linear-gradient(rgb(255, 255, 0)),rgb(255, 0, 0);
+}
