@@ -24,11 +24,11 @@ html[data-theme='dark'] {
     font-family: NerdFont;
     src: url('/fonts/NerdFont.ttf') format('truetype');
 }
-/* 
+
 @font-face {
-    font-family: DMSans;
-    src: url('/fonts/DMSans.ttf') format('truetype');
-} */
+    font-family: Helvetica;
+    src: url('/fonts/Helvetica.ttf') format('truetype');
+} 
 
 * {
     &::-webkit-scrollbar {
@@ -53,6 +53,7 @@ html[data-theme='dark'] {
     color: var(--black);
     // user-select: none;
     -webkit-tap-highlight-color: transparent;
+    font-family: Helvetica;
 }
 
 :root {

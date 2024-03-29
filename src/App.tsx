@@ -14,13 +14,13 @@ import ChiSiamo from "./pages/Chi-siamo";
 import Materiali from "./pages/Materiali";
 
 let links = [
-    {label:'Home',link:'/',id:1},
-    {label:'Chi siamo',link:'/chi-siamo',id:2},
-    {label:'Contatti',link:'/contatti',id:3},
-    {label:'Articoli',link:'/articoli',id:4},
-    {label:'Materiali',link:'/materiali',id:5},
-    {label:'UDS',link:'/uds',id:6},
-    {label:'Link',link:'/link',id:7}
+    {src:'Home',link:'/',id:1},
+    {src:'Chi siamo',link:'/chi-siamo',id:2},
+    {src:'Contatti',link:'/contatti',id:3},
+    {src:'Articoli',link:'/articoli',id:4},
+    {src:'Materiali',link:'/materiali',id:5},
+    {src:'uds',link:'/uds',id:6,image:true},
+    {src:'link',link:'/link',id:7,image:true}
 ]
 
 function App() {
