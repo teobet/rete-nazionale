@@ -4,6 +4,8 @@ import "./header.scss";
 import { Link } from "react-router-dom";
 import { LinkT } from "../../types/Links";
 
+
+
 // TODO riutilizzare la creazione dei link
 
 const Links = (props: { links: LinkT[] }) => {
@@ -13,7 +15,7 @@ const Links = (props: { links: LinkT[] }) => {
         .sort((a, b) => a.id - b.id)
         .map((element) => (
           <Link className="link" to={element.link}>
-            {element.label}
+            {element.src}
           </Link>
         ))}
     </>
@@ -21,7 +23,7 @@ const Links = (props: { links: LinkT[] }) => {
 };
 
 export default function Header(props: {
-  data: { link: string; label: string; id: number }[];
+  data: LinkT[];
 }) {
   const [height, setHeight] = useState<number | undefined>(0);
   const [open, setOpen] = useState<boolean>(false);

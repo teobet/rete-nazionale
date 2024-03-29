@@ -88,6 +88,17 @@
                 }
             }
         }
+        .image-link{
+            object-fit: contain;
+            border-radius: 50%;
+            width: 4rem;
+            border: #8b0909 dashed 2px;
+            transition: 0.2s;
+            
+            &:hover{
+                scale: 110%;
+            }
+        }
     }
 
     .mobile-menu {

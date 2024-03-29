@@ -1,7 +1,8 @@
 type LinkT = {
   id: number;
   link: string;
-  label: string;
+  src: string;
+  image?: boolean
 };
 
 export type { LinkT };
