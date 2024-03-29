@@ -24,6 +24,7 @@ html[data-theme='dark'] {
     font-family: NerdFont;
     src: url('/fonts/NerdFont.ttf') format('truetype');
 }
+
 /* 
 @font-face {
     font-family: DMSans;
@@ -73,11 +74,12 @@ html {
 
 body {
     background: var(--white-alt);
-    font-family: DMSans;
+    font-family: Helvetica;
     transition: 0.2s ease-in-out;
 }
 
-body, html {
+body,
+html {
     height: 100%;
     width: 100%;
     scroll-behavior: smooth;
@@ -86,4 +88,3 @@ body, html {
 a {
     text-decoration: none;
 }
-

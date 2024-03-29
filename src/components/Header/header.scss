@@ -5,42 +5,88 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 1rem;
     background-color: #fff;
     position: fixed;
     border-bottom: solid 3px var(--red);
     box-shadow: var(--border-shadow);
+    padding: 1rem 0;
 
     .logo {
         height: 100px;
+        padding-left: 1rem;
     }
 
     .mobile-links {
         position: fixed;
-        background-color: red;
+        background-color: var(--white-alt);
         top: 0;
         left: 0;
         height: 100%;
         width: 100%;
         display: none;
-        
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+
+        .mobile-close {
+            font-family: NerdFont;
+            position: absolute;
+            top: 32px;
+            right: 32px;
+            height: 75px;
+            width: 75px;
+            display: grid;
+            place-items: center;
+            font-size: 3.5rem;
+            cursor: pointer;
+            user-select: none;
+        }
+
         &.open {
             display: flex;
         }
+
+        .link {
+            color: var(--black);
+            font-size: 2rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
     }
-    
+
     .desktop-links {
         display: flex;
         justify-content: space-evenly;
         align-items: center;
         flex-wrap: wrap;
+        gap: 32px;
+        padding-inline: 3rem;
 
         .link {
-            padding: 2rem;
-            color: #000000;
+            color: var(--black);
             font-size: 1.5rem;
             font-weight: 600;
             cursor: pointer;
+            position: relative;
+
+            &::after {
+                content: "";
+                transition: .2s;
+                height: 0;
+            }
+
+            &:hover {
+                &::after {
+                    content: "";
+                    position: absolute;
+                    bottom: -8px;
+                    background-color: var(--red);
+                    height: 3px;
+                    width: calc(100% + 16px);
+                    left: -8px;
+                }
+            }
         }
     }
 
@@ -52,9 +98,12 @@
         width: 75px;
         place-items: center;
         text-align: center;
+        cursor: pointer;
+        user-select: none;
+        margin-right: 2rem;
     }
 
-    @media screen and (max-width: $mdBreakpoint){
+    @media screen and (max-width: $mdBreakpoint) {
         .desktop-links {
             display: none;
         }

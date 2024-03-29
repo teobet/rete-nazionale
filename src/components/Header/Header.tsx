@@ -6,11 +6,11 @@ import { LinkT } from "../../types/Links";
 
 // TODO riutilizzare la creazione dei link
 
-const Links = (links: LinkT[]) => {
+const Links = (props: { links: LinkT[] }) => {
   return (
     <>
-      {links
-        ?.sort((a, b) => a.id - b.id)
+      {props.links
+        .sort((a, b) => a.id - b.id)
         .map((element) => (
           <Link className="link" to={element.link}>
             {element.label}
@@ -20,8 +20,8 @@ const Links = (links: LinkT[]) => {
   );
 };
 
-export default function Header(props?: {
-  data?: { link: string; label: string; id: number }[];
+export default function Header(props: {
+  data: { link: string; label: string; id: number }[];
 }) {
   const [height, setHeight] = useState<number | undefined>(0);
   const [open, setOpen] = useState<boolean>(false);
@@ -39,16 +39,11 @@ export default function Header(props?: {
           󰍜
         </div>
         <div className={`mobile-links ${open ? "open" : ""}`}>
-          <Links links={props?.data} />
+          <div className="mobile-close" onClick={() => setOpen(false)}></div>
+          <Links links={props.data} />
         </div>
         <div className="desktop-links">
-          {props?.data
-            ?.sort((a, b) => a.id - b.id)
-            .map((element) => (
-              <Link className="link" to={element.link}>
-                {element.label}
-              </Link>
-            ))}
+          <Links links={props.data} />
         </div>
       </header>
       <div className="headerSpacing" style={{ height: `${height}px` }} />
