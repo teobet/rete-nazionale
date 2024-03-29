@@ -1,4 +1,5 @@
 import { ArticleT } from "../../types/Articles";
+import "./article.scss"
 
 const Article = (props: { article: ArticleT }) => {
   const { title, excerpt, body, date } = props.article;

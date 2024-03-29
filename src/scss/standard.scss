@@ -1,0 +1,89 @@
+@import "./variables.scss";
+
+html {
+    --white: #ffffff;
+    --white-alt: #eeeeee;
+    --red: #ce231e;
+    --black: #221e1f;
+    --border-shadow: 0 0 20px -5px var(--black);
+
+    --shadow: 0 0 20px -5px var(--black);
+}
+
+html[data-theme='dark'] {
+    --white: #141414;
+    --white-alt: #1d1d1d;
+    --green: #2da235;
+    --black: #e6e6e6;
+    --border-shadow: 0 0 0px 5px var(--green);
+
+    --shadow: unset;
+}
+
+@font-face {
+    font-family: NerdFont;
+    src: url('/fonts/NerdFont.ttf') format('truetype');
+}
+/* 
+@font-face {
+    font-family: DMSans;
+    src: url('/fonts/DMSans.ttf') format('truetype');
+} */
+
+* {
+    &::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: none;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: var(--green);
+        border-radius: 20px;
+    }
+
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: none;
+    box-sizing: border-box;
+    font-weight: 100;
+    color: var(--black);
+    // user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    font-size: 16px;
+
+    @media screen and (max-width: 768px) {
+        font-size: 14px;
+    }
+
+    @media screen and (max-width: 600px) {
+        font-size: 12px;
+    }
+}
+
+html {
+    scroll-padding-top: 150px; // ! TBD
+}
+
+body {
+    background: var(--white-alt);
+    font-family: DMSans;
+    transition: 0.2s ease-in-out;
+}
+
+body, html {
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+}
+
