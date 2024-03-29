@@ -7,27 +7,27 @@ import {
 import Header from "./components/Header/Header";
 
 import "./scss/standard.scss";
-import Home from "./pages/Home";
+import Home from "./pages/Home/Home";
 import Contatti from "./pages/Contatti";
-import Articoli from "./pages/Articoli";
+import Articoli from "./pages/Articles/Articoli";
 import ChiSiamo from "./pages/Chi-siamo";
 import Materiali from "./pages/Materiali";
 
 let links = [
-    {src:'Home',link:'/',id:1},
-    {src:'Chi siamo',link:'/chi-siamo',id:2},
-    {src:'Contatti',link:'/contatti',id:3},
-    {src:'Articoli',link:'/articoli',id:4},
-    {src:'Materiali',link:'/materiali',id:5},
-    {src:'uds',link:'/uds',id:6,image:true},
-    {src:'link',link:'/link',id:7,image:true}
+    { src: 'Home', link: '/', id: 1 },
+    { src: 'Chi siamo', link: '/chi-siamo', id: 2 },
+    { src: 'Contatti', link: '/contatti', id: 3 },
+    { src: 'Articoli', link: '/articoli', id: 4 },
+    { src: 'Materiali', link: '/materiali', id: 5 },
+    { src: 'uds', link: '/uds', id: 6, image: true },
+    { src: 'link', link: '/link', id: 7, image: true }
 ]
 
 function App() {
     return (
         <div>
             <BrowserRouter>
-            <Header data={links} />
+                <Header data={links} />
                 <Routes>
                     <Route path='/' element={<Home />}></Route>
                     <Route path='/contatti' element={<Contatti />}></Route>

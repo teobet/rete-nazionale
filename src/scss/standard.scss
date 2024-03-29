@@ -28,7 +28,7 @@ html[data-theme='dark'] {
 @font-face {
     font-family: Helvetica;
     src: url('/fonts/Helvetica.ttf') format('truetype');
-} 
+}
 
 * {
     &::-webkit-scrollbar {
@@ -87,4 +87,14 @@ html {
 
 a {
     text-decoration: none;
+}
+
+
+.articlesP {
+    .articles {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 20px;
+
+    }
 }

@@ -1,8 +1,8 @@
 import axios from "axios";
 
-const getArticles = async () => {
+const getArticles = async (limit?: number) => {
     const response: any =
-        await axios.get("http://localhost:8080/wp-json/wp/v2/posts")
+        await axios.get(`http://localhost:8080/wp-json/wp/v2/posts/${limit ? `?per_page=${limit}` : ""}`)
             .catch((e) => console.error("Failed to retrieve articles"))
 
     const data = response?.data

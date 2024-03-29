@@ -6,7 +6,7 @@ const Article = (props: { article: ArticleT }) => {
 
   return (
     <div className="article">
-      <div className="title">{title}</div>
+      <div className="smallTitle">{title}</div>
       <div className="excerpt" dangerouslySetInnerHTML={{ __html: excerpt }} />
       <div className="date">{date.toString()}</div>
     </div>

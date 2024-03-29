@@ -1,0 +1,17 @@
+@import "../../scss/variables.scss";
+
+.homepage {
+    @include container;
+    padding-top: 32px;
+    display: flex;
+
+    .articles-container {
+
+        .title {
+            @include title;
+            padding: 32px;
+        }
+    }
+
+    .about {}
+}

@@ -3,11 +3,22 @@
     border: 2px solid var(--black);
     flex: 1 1;
 
-    .title {
-        font-size: 2rem;
+    .smallTitle {
+        @include title(2rem)
     }
 
     .excerpt {
         text-wrap: wrap;
     }
+}
+
+@mixin container($width: 1440px, $margin: 32px) {
+    width: calc(100% - $margin);
+    max-width: $width;
+    margin-inline: auto;
+}
+
+@mixin title($size: 3rem) {
+    font-weight: 600;
+    font-size: $size;
 }

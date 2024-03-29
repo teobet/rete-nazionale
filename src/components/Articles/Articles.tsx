@@ -9,7 +9,7 @@ const Articles = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getArticles();
+      const data = await getArticles(10);
       setArticles(data);
     };
     fetchData();
