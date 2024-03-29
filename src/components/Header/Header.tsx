@@ -4,18 +4,19 @@ import "./header.scss";
 import { Link } from "react-router-dom";
 import { LinkT } from "../../types/Links";
 
+import image from "../../assets/link.png"
 
 
 // TODO riutilizzare la creazione dei link
 
-const Links = (props: { links: LinkT[] }) => {
+const Links = (props: { links: LinkT[], callback:Function }) => {
   return (
     <>
       {props.links
         .sort((a, b) => a.id - b.id)
         .map((element) => (
-          <Link className="link" to={element.link}>
-            {element.src}
+          <Link to={element.link} onClick={()=>props.callback(false)}>
+            {element.image?<img src={image} className="image-link" />:<div className="link">{element.src}</div>} {/* TODO: fixa col path giusto */}
           </Link>
         ))}
     </>
@@ -42,10 +43,10 @@ export default function Header(props: {
         </div>
         <div className={`mobile-links ${open ? "open" : ""}`}>
           <div className="mobile-close" onClick={() => setOpen(false)}></div>
-          <Links links={props.data} />
+          <Links links={props.data} callback={setOpen} />
         </div>
         <div className="desktop-links">
-          <Links links={props.data} />
+          <Links links={props.data} callback={setOpen} />
         </div>
       </header>
       <div className="headerSpacing" style={{ height: `${height}px` }} />

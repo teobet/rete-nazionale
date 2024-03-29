@@ -53,6 +53,13 @@
             font-weight: 600;
             cursor: pointer;
         }
+        .image-link{
+            object-fit: contain;
+            border-radius: 50%;
+            width: 4rem;
+            border: #8b0909 dashed 2px;
+            transition: 0.2s;
+        }
     }
 
     .desktop-links {
@@ -112,6 +119,7 @@
         cursor: pointer;
         user-select: none;
         margin-right: 2rem;
+        
     }
 
     @media screen and (max-width: $mdBreakpoint) {
