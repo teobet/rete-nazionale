@@ -19,9 +19,6 @@ const getPages = async (limit?: number) => {
             await inner_url(a._links["wp:featuredmedia"][0].href)
             : ""
 
-        console.log(image);
-
-
         const page = {
             title: a.title.rendered,
             image,

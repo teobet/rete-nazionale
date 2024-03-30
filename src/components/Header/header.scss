@@ -10,6 +10,7 @@
     border-bottom: solid 3px var(--red);
     box-shadow: var(--border-shadow);
     padding: 1rem 0;
+    z-index: 10;
 
     .logo {
         height: 100px;

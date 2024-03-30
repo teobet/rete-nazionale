@@ -4,6 +4,8 @@ import Article from "../Article/Article";
 import { ArticleT } from "../../types/Articles";
 import "./articles.scss";
 
+// TODO Salviamoci sti dati almeno non dobbiamo chiederli ogni volta
+
 const Articles = () => {
   const [articles, setArticles] = useState<[] | null>(null);
 
@@ -18,7 +20,7 @@ const Articles = () => {
   return (
     <div className="articles">
       {articles?.map((a: ArticleT) => (
-        <Article article={a} />
+        <Article article={a} key={a.id}/>
       ))}
     </div>
   );

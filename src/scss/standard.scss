@@ -40,7 +40,8 @@ html[data-theme='dark'] {
     }
 
     &::-webkit-scrollbar-thumb {
-        background: var(--green);
+        background: var(--red);
+        border: 2px solid var(--white);
         border-radius: 20px;
     }
 
@@ -95,6 +96,5 @@ a {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 20px;
-
     }
 }

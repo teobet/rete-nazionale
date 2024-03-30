@@ -3,9 +3,17 @@
 .homepage {
     @include container;
     padding-top: 32px;
-    display: flex;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr auto;
+
+    @media screen and (max-width: $lgBreakpoint){
+        display: flex;
+        flex-direction: column-reverse;
+    }
 
     .articles-container {
+        min-width: 430px;
 
         .title {
             @include title;
@@ -13,5 +21,18 @@
         }
     }
 
-    .about {}
+    .about {
+        display: flex;
+        flex-direction: column;
+        gap: 32px;
+        margin-bottom: 32px;
+
+        .title {
+            @include title;
+        }
+
+        .description {
+            font-size: 1.5rem;
+        }
+    }
 }

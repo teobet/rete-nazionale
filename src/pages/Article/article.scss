@@ -1,0 +1,9 @@
+@import "../../scss/variables.scss";
+
+.article {
+    @include container;
+    
+    .title {
+        @include title;
+    }
+}

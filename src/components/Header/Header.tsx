@@ -4,45 +4,49 @@ import "./header.scss";
 import { Link } from "react-router-dom";
 import { LinkT } from "../../types/Links";
 
-import image from "../../assets/link.png"
+import image from "../../assets/link.png";
 
-
-// TODO riutilizzare la creazione dei link
-
-const Links = (props: { links: LinkT[], callback:Function }) => {
+const Links = (props: { links: LinkT[]; callback: Function }) => {
   return (
     <>
       {props.links
         .sort((a, b) => a.id - b.id)
         .map((element) => (
-          <Link to={element.link} onClick={()=>props.callback(false)}>
-            {element.image?<img src={image} className="image-link" />:<div className="link">{element.src}</div>} {/* TODO: fixa col path giusto */}
+          <Link to={element.link} onClick={() => props.callback(false)} key={element.id}>
+            {element.image ? (
+              <img src={image} className="image-link" />
+            ) : (
+              <div className="link">{element.src}</div>
+            )}{" "}
+            {/* TODO: fixa col path giusto */}
           </Link>
         ))}
     </>
   );
 };
 
-export default function Header(props: {
-  data: LinkT[];
-}) {
+export default function Header(props: { data: LinkT[] }) {
   const [height, setHeight] = useState<number | undefined>(0);
   const [open, setOpen] = useState<boolean>(false);
   const header = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    setHeight(header?.current?.clientHeight);
-  }, []);
+    setHeight(header?.current?.offsetHeight);
+  }, [header?.current]);
 
   return (
     <>
       <header id="header" ref={header}>
-        <img src={logo} className="logo" alt="" />
+        <Link to="/">
+          <img src={logo} className="logo" alt="" />
+        </Link>
         <div className="mobile-menu" onClick={() => setOpen(true)}>
           󰍜
         </div>
         <div className={`mobile-links ${open ? "open" : ""}`}>
-          <div className="mobile-close" onClick={() => setOpen(false)}></div>
+          <div className="mobile-close" onClick={() => setOpen(false)}>
+            
+          </div>
           <Links links={props.data} callback={setOpen} />
         </div>
         <div className="desktop-links">

@@ -1,14 +1,41 @@
+@import "../../scss/variables.scss";
 
+.carousel {
+    user-select: none;
 
-.carousel-body{
-    background-image: var(--image-url);
-    transition: 1s;
-}
+    .swiper {
+        display: grid;
 
-button{
-    padding: 10px;
-    border: #000000 solid 1px;
-    border-radius: 25px;
-    display: block;
-    background: linear-gradient(rgb(255, 255, 0)),rgb(255, 0, 0);
+        .swiper-wrapper {
+            min-width: 0;
+
+            .swiper-slide {
+                &::after {
+                    content: "";
+                    background: linear-gradient(#00000000, #0000004f);
+                    height: 100%;
+                    width: 100%;
+                    top: 0;
+                    left: 0;
+                    position: absolute;
+                }
+
+                .title {
+                    position: absolute;
+                    bottom: 32px;
+                    left: 32px;
+                    @include title;
+                    z-index: 2;
+                    color: white;
+                }
+                img {
+                    width: 100%;
+                    aspect-ratio: 16 / 9;
+                    object-fit: cover;
+                    position: relative;
+
+                }
+            }
+        }
+    }
 }

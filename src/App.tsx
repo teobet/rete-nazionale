@@ -12,6 +12,7 @@ import Contatti from "./pages/Contatti";
 import Articoli from "./pages/Articles/Articoli";
 import ChiSiamo from "./pages/Chi-siamo";
 import Materiali from "./pages/Materiali";
+import Article from "./pages/Article/Article";
 
 let links = [
     { src: 'Home', link: '/', id: 1 },
@@ -29,6 +30,7 @@ function App() {
             <BrowserRouter>
                 <Header data={links} />
                 <Routes>
+                    <Route path='/articolo/:id' element={<Article />} />
                     <Route path='/' element={<Home />}></Route>
                     <Route path='/contatti' element={<Contatti />}></Route>
                     <Route path='/articoli' element={<Articoli />}></Route>

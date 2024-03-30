@@ -1,34 +1,22 @@
 import { useEffect, useState } from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
 import { PageT } from "../../types/Pages";
 import "./carousel.scss";
 
 export default function Carousel(props: { pages?: PageT[] }) {
-    const [selected, setSelected] = useState<number>(0);
-    return (
-        <div className="carousel-body">
-            {props.pages ? (
-                <img src={props.pages[selected].image} height={100}></img>
-            ) : null}
-            <button
-                type="button"
-                onClick={() =>
-                    setSelected(
-                        selected + 1 > (props.pages?.length || 1)-1 ? 0 : selected+1
-                    )
-                }
-            >
-                +
-            </button>
-            <button
-                type="button"
-                onClick={() =>
-                    setSelected(
-                        selected - 1 < 0 ? (props.pages?.length || 1)-1 : selected - 1
-                    )
-                }
-            >
-                -
-            </button>
-        </div>
-    );
+  return (
+    <div className="carousel">
+      <Swiper
+        className="swiper"
+      >
+        {props.pages?.map((p) => (
+          <SwiperSlide key={p.date.toString()}>
+            <img src={p.image} alt="" />
+            <div className="title">{p.title}</div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
+    </div>
+  );
 }
