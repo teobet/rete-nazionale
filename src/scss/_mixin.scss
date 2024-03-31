@@ -2,6 +2,7 @@
     padding: 16px;
     border: 2px solid var(--black);
     flex: 1 1;
+    animation: fade-in 1s ease-in-out;
 
     .smallTitle {
         @include title(2rem)
@@ -10,6 +11,18 @@
     .excerpt {
         text-wrap: wrap;
     }
+    
+    @keyframes fade-in{
+            0%{
+                transform: translate(0,6rem);
+                opacity: 0;
+
+            }
+            100%{
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
 }
 
 @mixin container($width: 1440px, $margin: 32px) {
