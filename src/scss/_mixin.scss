@@ -2,7 +2,7 @@
     padding: 16px;
     border: 2px solid var(--black);
     flex: 1 1;
-    animation: fade-in 1s ease-in-out;
+    animation: fade-in 0.5s ease-in-out;
 
     .smallTitle {
         @include title(2rem)
