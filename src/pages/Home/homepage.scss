@@ -2,7 +2,6 @@
 
 .homepage {
     @include container;
-    padding-top: 32px;
     display: grid;
     gap: 32px;
     grid-template-columns: 1fr auto;

@@ -2,6 +2,7 @@
 
 html {
     --white: #ffffff;
+    --grey: #777777;
     --white-alt: #eeeeee;
     --red: #ce231e;
     --black: #221e1f;
@@ -96,5 +97,17 @@ a {
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
         gap: 20px;
+    }
+}
+
+.location-nav{
+    @include container;
+    padding: 2rem 0 2rem 0;
+    display: flex;
+    user-select: none;
+    *{
+        color: var(--grey);
+        font-size: x-large;
+        padding: 0.5rem;
     }
 }
