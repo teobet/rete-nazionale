@@ -1,7 +1,9 @@
 import {
     BrowserRouter,
     Routes,
-    Route
+    Route,
+    useLocation,
+    Link,
 } from "react-router-dom"
 
 import Header from "./components/Header/Header";
@@ -25,12 +27,20 @@ let links = [
 ]
 
 function App() {
+    let location=useLocation()
+    let pathArray=location.pathname.split('/').slice(1)
     return (
         <div>
-            <BrowserRouter>
                 <Header data={links} />
+                <div className="location-nav">
+                    <Link to={"/"} style={{fontFamily:"NerdFont"}}>󰋜</Link>
+                    {
+                    pathArray.map((path:string)=>{
+                        return [<div style={{fontFamily:"NerdFont"}}>{'/'}</div>,<Link to={pathArray.slice(0,pathArray.findIndex((string)=>string===path)+1).join('/')} style={{textTransform:'capitalize'}}>{path.replace('-',' ')}</Link>]
+                    })   
+                    }</div>
                 <Routes>
-                    <Route path='/articolo/:id' element={<Article />} />
+                    <Route path='/articoli/:id' element={<Article />} />
                     <Route path='/' element={<Home />}></Route>
                     <Route path='/contatti' element={<Contatti />}></Route>
                     <Route path='/articoli' element={<Articoli />}></Route>
@@ -39,7 +49,6 @@ function App() {
                     <Route path='/uds' element={<Home />}></Route>
                     <Route path='/link' element={<Home />}></Route>
                 </Routes>
-            </BrowserRouter>
         </div>
     );
 }
