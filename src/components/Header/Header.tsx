@@ -11,12 +11,12 @@ const Links = (props: { links: LinkT[]; callback: Function }) => {
     <>
       {props.links
         .sort((a, b) => a.id - b.id)
-        .map((element) => (
-          <Link to={element.link} onClick={() => props.callback(false)} key={element.id}>
-            {element.image ? (
+        .map((link) => (
+          <Link to={link.link} onClick={() => props.callback(false)} key={link.id}>
+            {link.image ? (
               <img src={image} className="image-link" />
             ) : (
-              <div className="link">{element.src}</div>
+              <div className="link">{link.src}</div>
             )}{" "}
             {/* TODO: fixa col path giusto */}
           </Link>

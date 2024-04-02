@@ -10,10 +10,10 @@ export default function Carousel(props: { pages?: PageT[] }) {
       <Swiper
         className="swiper"
       >
-        {props.pages?.map((p) => (
-          <SwiperSlide key={p.date.toString()}>
-            <img src={p.image} alt="" />
-            <div className="title">{p.title}</div>
+        {props.pages?.map((page) => (
+          <SwiperSlide key={page.date.toString()}>
+            <img src={page.image} alt="" />
+            <div className="title">{page.title}</div>
           </SwiperSlide>
         ))}
       </Swiper>

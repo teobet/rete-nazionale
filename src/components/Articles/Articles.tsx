@@ -19,8 +19,8 @@ const Articles = () => {
 
   return (
     <div className="articles">
-      {articles?.map((a: ArticleT) => (
-        <Article article={a} key={a.id}/>
+      {articles?.map((article: ArticleT) => (
+        <Article article={article} key={article.id}/>
       ))}
     </div>
   );
