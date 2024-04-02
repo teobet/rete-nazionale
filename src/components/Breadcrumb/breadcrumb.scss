@@ -1,0 +1,21 @@
+@import "../../scss/variables.scss";
+
+.breadcrumbs {
+    @include container;
+    padding: 2rem 0 2rem 0;
+    display: flex;
+    user-select: none;
+
+    .home, .divisor, .crumb {
+        color: var(--grey);
+        font-size: 2rem;
+        padding: 0.5rem;
+        display: grid;
+        place-items: center;
+        text-transform: capitalize;
+    }
+
+    .home, .divisor {
+        font-family: NerdFont;
+    }
+}

@@ -15,6 +15,7 @@ import Articoli from "./pages/Articles/Articoli";
 import ChiSiamo from "./pages/Chi-siamo";
 import Materiali from "./pages/Materiali";
 import Article from "./pages/Article/Article";
+import Breadcrumbs from "./components/Breadcrumb/Breadcrumb";
 
 let links = [
     { src: 'Home', link: '/', id: 1 },
@@ -27,18 +28,10 @@ let links = [
 ]
 
 function App() {
-    let location=useLocation()
-    let pathArray=location.pathname.split('/').slice(1)
     return (
         <div>
                 <Header data={links} />
-                <div className="location-nav">
-                    <Link to={"/"} style={{fontFamily:"NerdFont"}}>󰋜</Link>
-                    {
-                    pathArray.map((path:string)=>{
-                        return [<div style={{fontFamily:"NerdFont"}}>{'/'}</div>,<Link to={pathArray.slice(0,pathArray.findIndex((string)=>string===path)+1).join('/')} style={{textTransform:'capitalize'}}>{path.replace('-',' ')}</Link>]
-                    })   
-                    }</div>
+                <Breadcrumbs />
                 <Routes>
                     <Route path='/articoli/:id' element={<Article />} />
                     <Route path='/' element={<Home />}></Route>

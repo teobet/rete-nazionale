@@ -99,15 +99,3 @@ a {
         gap: 20px;
     }
 }
-
-.location-nav{
-    @include container;
-    padding: 2rem 0 2rem 0;
-    display: flex;
-    user-select: none;
-    *{
-        color: var(--grey);
-        font-size: x-large;
-        padding: 0.5rem;
-    }
-}
